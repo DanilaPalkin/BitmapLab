@@ -189,5 +189,17 @@ namespace scoi_lab1
             else if (val.CompareTo(max) > 0) return max;
             else return val;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var Form2 = new Form2(image1);
+            Form2.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var Form2 = new Form2(image2);
+            Form2.Show();
+        }
     }
 }
