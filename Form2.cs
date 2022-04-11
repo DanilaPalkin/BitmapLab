@@ -114,12 +114,74 @@ namespace scoi_lab1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            for (int i = 0; i < 500; ++i)
+            {
+                for (int j = 0; j < 500; ++j)
+                {
+                    var pix = image.GetPixel(j, i); // Цвет пикселя
+                    int r = pix.R;
+                    int g = pix.G;
+                    int b = pix.B;
+                    r = (int)((r * 100 - 128 * 10) / 90);
+                    g = (int)((g * 100 - 128 * 10) / 90);
+                    b = (int)((b * 100 - 128 * 10) / 90);
+                    if (r < 0)
+                        r = 0;
+                    if (g < 0)
+                        g = 0;
+                    if (b < 0)
+                        b = 0;
+                    if (r > 255)
+                        r = 255;
+                    if (g > 255)
+                        g = 255;
+                    if (b > 255)
+                        b = 255;
+                    pix = Color.FromArgb(r, g, b);
+                    image.SetPixel(j, i, pix);
+                }
+            }
+            pictureBox2.Image = image;
+            histogram = GetHistogram(image);
+            pictureBox2.Refresh();
+            pictureBox1.Paint += (o, e) => DrawHistogram(e.Graphics, pictureBox1, histogram);
+            pictureBox1.Refresh();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            for (int i = 0; i < 500; ++i)
+            {
+                for (int j = 0; j < 500; ++j)
+                {
+                    var pix = image.GetPixel(j, i); // Цвет пикселя
+                    int r = pix.R;
+                    int g = pix.G;
+                    int b = pix.B;
+                    r = (int)((r * 90 + 128 * 10) / 100);
+                    g = (int)((g * 90 + 128 * 10) / 100);
+                    b = (int)((b * 90 + 128 * 10) / 100);
+                    if (r < 0)
+                        r = 0;
+                    if (g < 0)
+                        g = 0;
+                    if (b < 0)
+                        b = 0;
+                    if (r > 255)
+                        r = 255;
+                    if (g > 255)
+                        g = 255;
+                    if (b > 255)
+                        b = 255;
+                    pix = Color.FromArgb(r, g, b);
+                    image.SetPixel(j, i, pix);
+                }
+            }
+            pictureBox2.Image = image;
+            histogram = GetHistogram(image);
+            pictureBox2.Refresh();
+            pictureBox1.Paint += (o, e) => DrawHistogram(e.Graphics, pictureBox1, histogram);
+            pictureBox1.Refresh();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
