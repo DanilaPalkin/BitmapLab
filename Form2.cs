@@ -207,5 +207,39 @@ namespace scoi_lab1
             pictureBox1.Paint += (o, e) => DrawHistogram(e.Graphics, pictureBox1, histogram);
             pictureBox1.Refresh();
         }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            int factor = 10;
+            for (int i = 0; i < 500; ++i)
+            {
+                for (int j = 0; j < 500; ++j)
+                {
+                    var pix = image.GetPixel(j, i); // Цвет пикселя
+                    int r = pix.R;
+                    int g = pix.G;
+                    int b = pix.B;
+                    int S = r + g + b;
+                    if (S > (((255 + factor) / 2) * 3))
+                    {
+                        r = 255;
+                        g = 255;
+                        b = 255;
+                    } else
+                    {
+                        r = 0;
+                        g = 0;
+                        b = 0;
+                    }
+                    pix = Color.FromArgb(r, g, b);
+                    image.SetPixel(j, i, pix);
+                }
+            }
+            pictureBox2.Image = image;
+            histogram = GetHistogram(image);
+            pictureBox2.Refresh();
+            pictureBox1.Paint += (o, e) => DrawHistogram(e.Graphics, pictureBox1, histogram);
+            pictureBox1.Refresh();
+        }
     }
 }
