@@ -36,6 +36,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -124,11 +128,52 @@
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(11, 175);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(108, 43);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Линейная фильтрация";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(125, 175);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(108, 43);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Медианная фильтрация";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(125, 224);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(108, 23);
+            this.textBox1.TabIndex = 10;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(239, 175);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(107, 43);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Фурье-образ";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 648);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox2);
@@ -156,5 +201,9 @@
         private PictureBox pictureBox2;
         private CheckBox checkBox1;
         private CheckBox checkBox2;
+        private Button button5;
+        private Button button6;
+        private TextBox textBox1;
+        private Button button7;
     }
 }
